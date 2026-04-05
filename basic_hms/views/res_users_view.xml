@@ -1,23 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_users_form_inherit_clinic" model="ir.ui.view">
-        <field name="name">res.users.form.clinic.permissions</field>
+    <record id="view_users_form_inherit_clinic_permissions" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.clinic.permissions</field>
         <field name="model">res.users</field>
         <field name="inherit_id" ref="base.view_users_form"/>
         <field name="arch" type="xml">
-
             <xpath expr="//sheet" position="inside">
                 <group string="Clinic Permissions">
-                    <field name="groups_id" widget="many2many_tags"
-                           domain="[('id', 'in', [
-                               ref('basic_hms.bi_group_doctor'),
-                               ref('basic_hms.group_chemist'),
-                               ref('basic_hms.group_medical_group'),
-                               ref('basic_hms.group_receptionist')
-                           ])]"/>
+                    <field name="clinic_doctor"/>
+                    <field name="clinic_chemist"/>
+                    <field name="clinic_medical_group"/>
+                    <field name="clinic_receptionist"/>
                 </group>
             </xpath>
-
         </field>
     </record>
 </odoo>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<odoo>-->
+<!--    <record id="view_users_form_inherit_clinic" model="ir.ui.view">-->
+<!--        <field name="name">res.users.form.clinic.permissions</field>-->
+<!--        <field name="model">res.users</field>-->
+<!--        <field name="inherit_id" ref="base.view_users_form"/>-->
+<!--        <field name="arch" type="xml">-->
+
+<!--            <xpath expr="//sheet" position="inside">-->
+<!--                <group string="Clinic Permissions">-->
+<!--                    <field name="groups_id" widget="many2many_tags"-->
+<!--                           domain="[('id', 'in', [-->
+<!--                               ref('basic_hms.bi_group_doctor'),-->
+<!--                               ref('basic_hms.group_chemist'),-->
+<!--                               ref('basic_hms.group_medical_group'),-->
+<!--                               ref('basic_hms.group_receptionist')-->
+<!--                           ])]"/>-->
+<!--                </group>-->
+<!--            </xpath>-->
+
+<!--        </field>-->
+<!--    </record>record-->
+<!--</odoo>-->
