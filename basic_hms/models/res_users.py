@@ -1,4 +1,3 @@
-# basic_hms/models/res_users.py
 from odoo import api, fields, models
 
 
@@ -19,27 +18,27 @@ class ResUsers(models.Model):
         for user in self:
             if doctor_group:
                 if user.clinic_doctor:
-                    user.groups_id = [(4, doctor_group.id)]
+                    user.group_ids = [(4, doctor_group.id)]
                 else:
-                    user.groups_id = [(3, doctor_group.id)]
+                    user.group_ids = [(3, doctor_group.id)]
 
             if chemist_group:
                 if user.clinic_chemist:
-                    user.groups_id = [(4, chemist_group.id)]
+                    user.group_ids = [(4, chemist_group.id)]
                 else:
-                    user.groups_id = [(3, chemist_group.id)]
+                    user.group_ids = [(3, chemist_group.id)]
 
             if medical_group:
                 if user.clinic_medical_group:
-                    user.groups_id = [(4, medical_group.id)]
+                    user.group_ids = [(4, medical_group.id)]
                 else:
-                    user.groups_id = [(3, medical_group.id)]
+                    user.group_ids = [(3, medical_group.id)]
 
             if receptionist_group:
                 if user.clinic_receptionist:
-                    user.groups_id = [(4, receptionist_group.id)]
+                    user.group_ids = [(4, receptionist_group.id)]
                 else:
-                    user.groups_id = [(3, receptionist_group.id)]
+                    user.group_ids = [(3, receptionist_group.id)]
 
     @api.model_create_multi
     def create(self, vals_list):
