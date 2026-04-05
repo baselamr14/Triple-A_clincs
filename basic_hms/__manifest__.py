@@ -38,7 +38,6 @@
     "depends": ["base", "sale_management", "stock", "account"],
     "data": [
         'security/hospital_groups.xml',
-            'views/res_users_view.xml',
         'security/ir.model.access.csv',
         'data/ir_sequence_data.xml',
         'views/assets.xml',
